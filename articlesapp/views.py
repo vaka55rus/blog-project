@@ -1,5 +1,5 @@
 from django.views.generic import TemplateView
 
 
-class AboutView(TemplateView):
+class ArticleView(TemplateView):
     template_name = "about.html"
