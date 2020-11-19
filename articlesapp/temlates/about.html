@@ -1,1 +1,6 @@
-Hello.world
+<h2>List of articles</h2>
+    <ul>
+        {% for object in articles_object %}
+            <li>{{ object.title }}</li>
+        {% endfor %}
+    </ul>
