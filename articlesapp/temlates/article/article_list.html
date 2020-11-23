@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+ <head>
+   <title>Articles</title>
+   <meta charset="utf-8">
+ </head>
+ <body>
+
+ <h2>List of articles</h2>
+
+ <ul>
+     {% for object in articles %}
+         <li><a href="{% url 'post_detail' object.id %}"> {{ object.title }} </a></li>
+     {% endfor %}
+ </ul>
+
+
+ </body>
