@@ -1,7 +1,13 @@
-<form action="articlesadd/" method="post">
+<form method="post">
+    {% csrf_token %}
     <p>Напишите название статьи: </p>
-    <input id="title" type="text" name="title">
-    <p>Напишите свою статью: </p>
-    <textarea id="body" name="body"> </textarea><br>
-    <input type="submit" value="OK">
+    {{ form.title }}<br>
+    <p>Напишите содержание статьи: </p>
+    {{ form.body }}<br>
+    <p>Прикрепите категорию для статьи: </p>
+    {{ form.categories }}<br>
+    <p>Опубликовать статью?</p>
+    {{ form.published }}<br>
+    <button type="submit">Добавить статью</button>
+    <span>{{ error }}</span>
 </form>
