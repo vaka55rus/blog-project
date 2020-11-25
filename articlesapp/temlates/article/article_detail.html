@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
  <head>
    <title>Details articles</title>
    <meta charset="utf-8">
@@ -8,5 +8,7 @@
     <h1>{{ details.title }}</h1>
     <p> {{ details.body }} </p>
     <p> {{ details.categories }} </p>
-    <div>{{ details.date_create }} </div>
+    <p>Дата ссоздания статьи {{ details.date_create }} </p>
+    <p>Дата последнего изменения статьи {{ details.date_modification}}</p>
+    <a href="{% url 'update' details.id%}"><button>Редактировать статью</button></a>
  </body>

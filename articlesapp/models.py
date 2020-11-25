@@ -7,6 +7,9 @@ class Category(models.Model):
     def __str__(self):
         return self.category
 
+    class Meta:
+        verbose_name = 'Категория'
+        verbose_name_plural = 'Категории'
 
 class Article(models.Model):
     title = models.CharField(max_length=300, verbose_name='Заголовок статьи')
@@ -21,3 +24,7 @@ class Article(models.Model):
 
     def get_absolute_url(self):
         return reverse('post_detail', args=[self.id])
+
+    class Meta:
+        verbose_name = 'Статья'
+        verbose_name_plural = 'Статьи'

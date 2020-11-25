@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
  <head>
    <title>Articles</title>
    <meta charset="utf-8">
@@ -14,7 +14,27 @@
      {% endfor %}
  </ul>
 
- <a href="{% url 'create' %}"><button>Добавить запись</button></a>
+ <a href="{% url 'create' %}"><button>Добавить запись</button></a><br>
 
 
+     {% if is_paginated %}
+        <div class="pagination">
+            {% if page_obj.has_previous %}
+                <a href="?page={{ page_obj.previous_page_number }}">&laquo;</a>
+            {% endif %}
+            <span class="current">
+            {% for i in paginator.page_range %}
+                {% if page_obj.number == i %}
+                    <a class="active"> {{ i }} </a>
+                {% else %}
+                    <a href="?page={{ i }}">{{ i }}</a>
+                {% endif %}
+            {% endfor %}
+            </span>
+            {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}">&raquo;</a>
+            {% endif %}
+        </div>
+    {% endif %}
  </body>
+

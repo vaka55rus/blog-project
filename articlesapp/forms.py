@@ -1,8 +1,13 @@
 from .models import Article
-from django.forms import ModelForm, TextInput
+from django.forms import ModelForm
 
 
-class ArticleForm(ModelForm):
+class CreateForm(ModelForm):
     class Meta:
         model = Article
-        fields = ['title', 'body', 'categories', 'published']
+        fields = [
+            'title',
+            'body',
+            'categories',
+            'published'
+        ]
