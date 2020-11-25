@@ -37,7 +37,7 @@
 
      <ul class=" list-counter-square">
          {% for object in articles %}
-             <li><a class="list-group-item" href="{% url 'post_detail' object.id %}"> {{ object.title }} </a></li>
+             <li><a class="list-group-item" href="{% url 'article_detail' object.id %}"> {{ object.title }} </a></li>
          {% endfor %}
      </ul>
 
