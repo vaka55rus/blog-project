@@ -6,7 +6,7 @@ from django.core.paginator import Paginator
 
 
 class ArticleView(ListView):
-    paginate_by = 2
+    paginate_by = 3
     model = Article
     context_object_name = 'articles'
     template_name = "article_list.html"
