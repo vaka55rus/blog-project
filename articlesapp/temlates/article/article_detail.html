@@ -17,11 +17,15 @@
         </nav>
     </header>
     <div class="container">
-    <h3 class="my-0 mr-md-auto font-weight-normal">{{ details.title }}</h3> <br>
-    <p> {{ details.body }} </p>
-    <p> {{ details.categories }} </p>
-    <p>Дата ссоздания статьи {{ details.date_create }} </p>
-    <p>Дата последнего изменения статьи {{ details.date_modification}}</p>
-    <a href="{% url 'update' details.id%}"><button>Редактировать статью</button></a>
- </div>
+        <h3 class="my-0 mr-md-auto font-weight-normal">{{ details.title }}</h3> <br>
+        <p> {{ details.body }} </p>
+        {% for object in details.categories.all %}
+        <ul>
+            <li> {{ object }} </li>
+        </ul>
+        {% endfor %}
+        <p>Дата ссоздания статьи {{ details.date_create }} </p>
+        <p>Дата последнего изменения статьи {{ details.date_modification}}</p>
+        <a href="{% url 'update' details.id%}"><button>Редактировать статью</button></a>
+    </div>
  </body>

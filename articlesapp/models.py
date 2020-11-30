@@ -1,6 +1,7 @@
 from django.db import models
 from django.urls import reverse
 
+
 class Category(models.Model):
     category = models.CharField(max_length=300, verbose_name='Имя категории')
 
