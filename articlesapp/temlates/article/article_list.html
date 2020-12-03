@@ -36,22 +36,34 @@
     <div class="row">
         <div class="col-3">
             <ul>
-                    {% for object in articles.categories.all %}
-                        <li> {{ object }} </li>
-                    {% endfor %}
+                {% for object in categories.category.all %}
+                     <li><a class="list-group-item" href="{% url 'post_detail' object.id %}"> {{ object }} </a></li>
+                 {% endfor %}
+
                 <li>Программирование</li>
                 <li>Авто</li>
             </ul>
         </div>
-    <div class="col-9">
-        <h5 class="my-0 mr-md-auto font-weight-normal"><a class="text-dark" href="">Список статей</a> </h5>
-        <ul class=" list-counter-square">
-             {% for object in articles %}
-                 <li><a class="list-group-item" href="{% url 'post_detail' object.id %}"> {{ object.title }} </a></li>
-             {% endfor %}
-        </ul>
+        <div class="col-6">
+            <h5 class="my-0 mr-md-auto font-weight-normal"><a class="text-dark" href="">Список статей</a> </h5>
+            <ul class="list-counter-square">
+                 {% for object in articles %}
+                     <li>
+                         <a class="list-group-item" href="{% url 'post_detail' object.id %}">
+                            <h4>{{ object.title }} </h4>
+                            Автор: {{ object.author }}
+                         </a>
+                     </li>
+                 {% endfor %}
+            </ul>
+        </div>
+        <div class="col-3">
+            <form action="{% url 'search' %}" method="get">
+                <input name="q" type="text" placeholder="Поиск по статьям">
+                <button type="submit">Найти</button>
+            </form>
+        </div>
     </div>
-</div>
 </div>
          {% if is_paginated %}
             <div class="paginator list-counter-square text-center">

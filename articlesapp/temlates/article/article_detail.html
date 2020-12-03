@@ -26,6 +26,7 @@
         {% endfor %}
         <p>Дата ссоздания статьи {{ details.date_create }} </p>
         <p>Дата последнего изменения статьи {{ details.date_modification}}</p>
+        <p>Автор: {{ details.author }}</p>
         <a href="{% url 'update' details.id%}"><button>Редактировать статью</button></a>
     </div>
  </body>
