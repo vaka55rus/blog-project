@@ -15,7 +15,7 @@ class Category(models.Model):
 class Article(models.Model):
     title = models.CharField(max_length=300, verbose_name='Заголовок статьи')
     body = models.TextField(verbose_name='Содержание статьи')
-    author = models.ForeignKey('users.User', on_delete=models.CASCADE, null=True)
+    author = models.ForeignKey('users.User', on_delete=models.CASCADE, verbose_name='Автор')
     categories = models.ManyToManyField(Category, verbose_name='Категории статьи')
     date_create = models.DateTimeField(auto_now_add=True)
     date_modification = models.DateTimeField(auto_now=True)

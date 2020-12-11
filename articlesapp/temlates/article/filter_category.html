@@ -18,9 +18,9 @@
     <div class="container">
 
             {% csrf_token %}
-        <h5>Результаты поиска</h5>
+        <h5>Результаты фильтрации по категориям</h5>
                 <ul class=" list-counter-square">
-                  {% for object in result %}
+                  {% for object in categoriesы %}
                     <li>
                         <a class="list-group-item" href="{% url 'post_detail' object.id %}">{{ object }}</a>
                     </li>
