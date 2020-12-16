@@ -6,7 +6,8 @@ from .models import Article
 class ArticleFilter(django_filters.FilterSet):
     class Meta:
         model = Article
-        fields = {'title': ['icontains'],
-                  'author': ['exact'],
-                  'categories': ['exact'],
-                  }
+        fields = {
+            'title': ['icontains'],
+            'author': ['exact'],
+            'categories': ['exact'],
+            }

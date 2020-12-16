@@ -12,6 +12,7 @@ class Category(models.Model):
         verbose_name = 'Категория'
         verbose_name_plural = 'Категории'
 
+
 class Article(models.Model):
     title = models.CharField(max_length=300, verbose_name='Заголовок статьи')
     body = models.TextField(verbose_name='Содержание статьи')

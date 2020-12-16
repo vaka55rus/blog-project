@@ -1,4 +1,4 @@
-from articlesapp.models import Article, Category
+from articlesapp.models import Article
 from django.views.generic import ListView
 from django.views.generic import DetailView, CreateView, UpdateView
 from .forms import CreateForm
@@ -7,15 +7,27 @@ from django_filters.views import FilterView
 from .filters import ArticleFilter
 
 
-class ArticleView(ListView):
-    paginate_by = 5
+#class ArticleFilterView(FilterView):
+   # filterset_class = ArticleFilter
+   # context_object_name = 'filter'
+   # template_name = 'search_filter.html'
+
+
+class ArticleView(FilterView, ListView):
+    filterset_class = ArticleFilter
     model = Article
     context_object_name = 'articles'
     template_name = 'article_list.html'
+    paginate_by = 3
 
     def get_queryset(self):
         queryset = Article.objects.filter(Q(published=True) | Q(author=self.request.user))
         return queryset
+
+    # def get(self):
+
+#class ArticleFilterQuery():
+
 
 
 class ArticleDetailView(DetailView):
@@ -48,7 +60,3 @@ class ArticleUpdate(UpdateView):
     template_name = 'update.html'
 
 
-class ArticleFilterView(FilterView):
-    filterset_class = ArticleFilter
-    context_object_name = 'filter'
-    template_name = 'search_filter.html'

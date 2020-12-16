@@ -1,5 +1,5 @@
 from django.urls import path
-from articlesapp.views import ArticleView, ArticleDetailView, ArticleCreate, ArticleUpdate, ArticleFilterView
+from articlesapp.views import ArticleView, ArticleDetailView, ArticleCreate, ArticleUpdate
 
 
 urlpatterns = [
@@ -7,5 +7,5 @@ urlpatterns = [
     path('<int:pk>/', ArticleDetailView.as_view(), name='post_detail'),
     path('<pk>/update', ArticleUpdate.as_view(), name='update'),
     path('create', ArticleCreate.as_view(), name='create'),
-    path(r'^list/$', ArticleFilterView.as_view(), name='filter'),
+    #path('filter/', ArticleFilterView.as_view(), name='filter'),
 ]
