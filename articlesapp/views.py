@@ -7,12 +7,6 @@ from django_filters.views import FilterView
 from .filters import ArticleFilter
 
 
-#class ArticleFilterView(FilterView):
-   # filterset_class = ArticleFilter
-   # context_object_name = 'filter'
-   # template_name = 'search_filter.html'
-
-
 class ArticleView(FilterView, ListView):
     filterset_class = ArticleFilter
     model = Article
@@ -23,11 +17,6 @@ class ArticleView(FilterView, ListView):
     def get_queryset(self):
         queryset = Article.objects.filter(Q(published=True) | Q(author=self.request.user))
         return queryset
-
-    # def get(self):
-
-#class ArticleFilterQuery():
-
 
 
 class ArticleDetailView(DetailView):

@@ -7,5 +7,4 @@ urlpatterns = [
     path('<int:pk>/', ArticleDetailView.as_view(), name='post_detail'),
     path('<pk>/update', ArticleUpdate.as_view(), name='update'),
     path('create', ArticleCreate.as_view(), name='create'),
-    #path('filter/', ArticleFilterView.as_view(), name='filter'),
 ]

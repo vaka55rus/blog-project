@@ -50,14 +50,14 @@
         </div>
         <div class="col-3">
             <form action="{% url 'article_list' %}" method="get">
-                    Введите название заголовка:
-                    <div>{{ filter.form.title__icontains }}</div><br>
-                    Выберите автора:
-                    <div>{{ filter.form.author }}</div><br>
-                    Выберите одну или несколько категорий:
-                    <div>{{ filter.form.categories }}</div><br>
-                    <input type="submit" value="Применить">
-                </form><br>
+                Введите название заголовка:
+                <div>{{ filter.form.title__icontains }}</div><br>
+                Выберите автора:
+                <div>{{ filter.form.author }}</div><br>
+                Выберите одну или несколько категорий:
+                <div>{{ filter.form.categories }}</div><br>
+                <input type="submit" value="Применить">
+            </form><br>
             <div><a href="{% url 'article_list' %}"><input type="submit" value="Сбросить"></a></div>
         </div>
     </div>
