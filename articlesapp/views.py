@@ -12,7 +12,7 @@ class ArticleView(FilterView, ListView):
     model = Article
     context_object_name = 'articles'
     template_name = 'article_list.html'
-    paginate_by = 3
+    paginate_by = 10
 
     def get_queryset(self):
         queryset = Article.objects.filter(Q(published=True) | Q(author=self.request.user))

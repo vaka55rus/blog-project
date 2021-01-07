@@ -13,6 +13,8 @@
             <div class="my-2 my-md-0 mr-md-3">
               <a class="p-2 text-dark" href="{% url 'article_list' %}">Список статей</a>
               <a class="p-2 text-dark" href="{% url 'create' %}">Создать новую запись</a>
+                <a class="p-2 btn-blue">{{ request.user }}</a>
+                 <a class="p-2 btn-danger" href="{% url 'logout' %}">Выйти</a>
             </div>
         </nav>
     </header>

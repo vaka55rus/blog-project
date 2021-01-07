@@ -25,17 +25,19 @@
  <body>
   <header>
         <nav class="navbar sticky-top d-flex  flex-column  flex-md-row align-items-center p-4 px-md-5">
-          <h5 class="my-0 mr-md-auto font-weight-normal"><a class="text-dark" href="">Учебный проект</a> </h5>
-            <div class="my-2 my-md-0 mr-md-3">
-              <a class="p-2 text-dark" href="{% url 'article_list' %}">Список статей</a>
-              <a class="p-2 text-dark" href="{% url 'create' %}">Создать новую запись</a>
-            </div>
+             <h5 class="my-0 mr-md-auto font-weight-normal"><a class="text-dark" href="">Учебный проект</a> </h5>
+             <div class="my-2 my-md-0 mr-md-3">
+                 <a class="p-2 text-dark" href="{% url 'article_list' %}">Список статей</a>
+                 <a class="p-2 text-dark" href="{% url 'create' %}">Создать новую запись</a>
+                 <a class="p-2 btn-blue">{{ request.user }}</a>
+                 <a class="p-2 btn-danger" href="{% url 'logout' %}">Выйти</a>
+             </div>
         </nav>
     </header>
 
 <div class="container">
     <div class="row">
-        <div class="col-7">
+        <div class="col-9">
             <h5 class="my-0 mr-md-auto font-weight-normal"><a class="text-dark" href="">Список статей</a> </h5>
             <ul class="list-counter-square">
                  {% for object in articles %}
